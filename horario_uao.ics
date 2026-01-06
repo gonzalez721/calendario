@@ -1,247 +1,99 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descargar Horario UAO</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-        .container {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 28px;
-        }
-        .subtitle {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 14px;
-        }
-        .download-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 18px 40px;
-            font-size: 18px;
-            border-radius: 12px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-bottom: 20px;
-        }
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-        }
-        .download-btn:active {
-            transform: translateY(0);
-        }
-        .info {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        .info h3 {
-            margin-top: 0;
-            color: #333;
-            font-size: 16px;
-        }
-        .info ul {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-        .info li {
-            margin: 5px 0;
-        }
-        .schedule {
-            background: #e8f4f8;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-            font-size: 13px;
-        }
-        .schedule strong {
-            color: #2c5aa0;
-        }
-        .icon {
-            font-size: 50px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="icon">📅</div>
-        <h1>Horario UAO 2026-1S</h1>
-        <div class="subtitle">Maria Jose Vesga Izquierdo</div>
-        
-        <button class="download-btn" onclick="downloadICS()">
-            📥 Descargar Archivo .ics
-        </button>
-        
-        <div class="info">
-            <h3>📱 Cómo importar en iPhone:</h3>
-            <ul>
-                <li>Descarga el archivo haciendo clic en el botón</li>
-                <li>Abre el archivo desde tu iPhone</li>
-                <li>Selecciona "Agregar todo"</li>
-                <li>Elige tu calendario preferido</li>
-            </ul>
-            
-            <div class="schedule">
-                <strong>Tu horario semanal:</strong><br>
-                🔵 Lunes: 3 clases (8:30-15:30)<br>
-                🟣 Martes: 3 clases (8:30-21:30)<br>
-                🟢 Miércoles: 2 clases (10:00-15:30)<br>
-                🟡 Jueves: 1 clase (15:30-17:00)<br>
-                ⚪ Viernes: Libre
-            </div>
-            
-            <p style="margin-top: 15px; color: #666;">
-                <strong>Período:</strong> 26 de enero - 31 de julio de 2026<br>
-                <strong>Total:</strong> 9 sesiones semanales
-            </p>
-        </div>
-    </div>
-
-    <script>
-        function downloadICS() {
-            const icsContent = `BEGIN:VCALENDAR
+`BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Universidad Autonoma de Occidente//Horario 2026-1S//ES
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Horario UAO 2026-1S
 X-WR-TIMEZONE:America/Bogota
-X-WR-CALDESC:Horario académico Maria Jose Vesga Izquierdo
 
 BEGIN:VEVENT
-DTSTART:20260126T083000
-DTEND:20260126T100000
-RRULE:FREQ=WEEKLY;UNTIL=20260731T235959Z;BYDAY=MO
-SUMMARY:Resistencia de Materiales 1
+UID:522225-MO@horario
+DTSTART;TZID=America/Bogota:20260126T083000
+DTEND;TZID=America/Bogota:20260126T100000
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20260604T235900
+SUMMARY:Resistencia de Materiales I
 LOCATION:Salón 3402 - Edificio Aulas 3
-DESCRIPTION:Código: 522225\\nGrupo: 1 (Clase Teórica)
-UID:522225-L-1@uao.edu.co
+DESCRIPTION:Código 522225 · Grupo 1 · Clase Teórica
 END:VEVENT
 
 BEGIN:VEVENT
-DTSTART:20260126T100000
-DTEND:20260126T113000
-RRULE:FREQ=WEEKLY;UNTIL=20260604T235959Z;BYDAY=MO
+UID:544217-MO@horario
+DTSTART;TZID=America/Bogota:20260126T100000
+DTEND;TZID=America/Bogota:20260126T113000
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20260604T235900
 SUMMARY:Termodinámica
 LOCATION:Salón 3306 - Edificio Aulas 3
-DESCRIPTION:Código: 544217\\nGrupo: 1 (Clase Teórica)
-UID:544217-L-1@uao.edu.co
+DESCRIPTION:Código 544217 · Grupo 1 · Clase Teórica
 END:VEVENT
 
 BEGIN:VEVENT
-DTSTART:20260126T140000
-DTEND:20260126T153000
-RRULE:FREQ=WEEKLY;UNTIL=20260604T235959Z;BYDAY=MO
-SUMMARY:Mecánica 2
-LOCATION:Aulas 3 Torreón 2 - Edificio Aulas 3
-DESCRIPTION:Código: 531248\\nGrupo: 2 (Clase Teórica)
-UID:531248-L-1@uao.edu.co
+UID:531248-MO@horario
+DTSTART;TZID=America/Bogota:20260126T140000
+DTEND;TZID=America/Bogota:20260126T153000
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20260604T235900
+SUMMARY:Mecánica II
+LOCATION:Aulas 3 Torreón 2
+DESCRIPTION:Código 531248 · Grupo 2 · Clase Teórica
 END:VEVENT
 
 BEGIN:VEVENT
-DTSTART:20260127T083000
-DTEND:20260127T100000
-RRULE:FREQ=WEEKLY;UNTIL=20260731T235959Z;BYDAY=TU
-SUMMARY:Resistencia de Materiales 1
+UID:522225-TU@horario
+DTSTART;TZID=America/Bogota:20260127T083000
+DTEND;TZID=America/Bogota:20260127T100000
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20260604T235900
+SUMMARY:Resistencia de Materiales I
 LOCATION:Salón 4304 - Edificio Aulas 4
-DESCRIPTION:Código: 522225\\nGrupo: 1 (Clase Teórica)
-UID:522225-M-1@uao.edu.co
+DESCRIPTION:Código 522225 · Grupo 1 · Clase Teórica
 END:VEVENT
 
 BEGIN:VEVENT
-DTSTART:20260127T153000
-DTEND:20260127T170000
-RRULE:FREQ=WEEKLY;UNTIL=20260604T235959Z;BYDAY=TU
+UID:513205-TU@horario
+DTSTART;TZID=America/Bogota:20260127T153000
+DTEND;TZID=America/Bogota:20260127T170000
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20260604T235900
 SUMMARY:Estructura y Propiedades de los Materiales
 LOCATION:Salón 3103 - Edificio Aulas 3
-DESCRIPTION:Código: 513205\\nGrupo: 1 (Clase Teórica)
-UID:513205-M-1@uao.edu.co
+DESCRIPTION:Código 513205 · Grupo 1 · Clase Teórica
 END:VEVENT
 
 BEGIN:VEVENT
-DTSTART:20260127T183000
-DTEND:20260127T213000
-RRULE:FREQ=WEEKLY;UNTIL=20260604T235959Z;BYDAY=TU
+UID:543238-TU@horario
+DTSTART;TZID=America/Bogota:20260127T183000
+DTEND;TZID=America/Bogota:20260127T213000
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20260604T235900
 SUMMARY:Fundamentos de Eléctrica y Electrónica (Nivelación)
 LOCATION:Por confirmar
-DESCRIPTION:Código: 543238\\nGrupo: 51 (Clase Teórica)
-UID:543238-M-1@uao.edu.co
+DESCRIPTION:Código 543238 · Grupo 51 · Clase Teórica
 END:VEVENT
 
 BEGIN:VEVENT
-DTSTART:20260128T100000
-DTEND:20260128T113000
-RRULE:FREQ=WEEKLY;UNTIL=20260731T235959Z;BYDAY=WE
+UID:544217-WE@horario
+DTSTART;TZID=America/Bogota:20260128T100000
+DTEND;TZID=America/Bogota:20260128T113000
+RRULE:FREQ=WEEKLY;BYDAY=WE;UNTIL=20260604T235900
 SUMMARY:Termodinámica
 LOCATION:Salón 3306 - Edificio Aulas 3
-DESCRIPTION:Código: 544217\\nGrupo: 1 (Clase Teórica)
-UID:544217-X-1@uao.edu.co
+DESCRIPTION:Código 544217 · Grupo 1 · Clase Teórica
 END:VEVENT
 
 BEGIN:VEVENT
-DTSTART:20260128T140000
-DTEND:20260128T153000
-RRULE:FREQ=WEEKLY;UNTIL=20260604T235959Z;BYDAY=WE
-SUMMARY:Mecánica 2
-LOCATION:Aulas 3 Torreón 1 - Edificio Aulas 3
-DESCRIPTION:Código: 531248\\nGrupo: 2 (Clase Teórica)
-UID:531248-X-1@uao.edu.co
+UID:531248-WE@horario
+DTSTART;TZID=America/Bogota:20260128T140000
+DTEND;TZID=America/Bogota:20260128T153000
+RRULE:FREQ=WEEKLY;BYDAY=WE;UNTIL=20260604T235900
+SUMMARY:Mecánica II
+LOCATION:Aulas 3 Torreón 1
+DESCRIPTION:Código 531248 · Grupo 2 · Clase Teórica
 END:VEVENT
 
-BEGIN:VEENT
-DTSTART:20260129T153000
-DTEND:20260129T170000
-RRULE:FREQ=WEEKLY;UNTIL=20260731T235959Z;BYDAY=TH
+BEGIN:VEVENT
+UID:513205-TH@horario
+DTSTART;TZID=America/Bogota:20260129T153000
+DTEND;TZID=America/Bogota:20260129T170000
+RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20260604T235900
 SUMMARY:Estructura y Propiedades de los Materiales
 LOCATION:Salón 3406 - Edificio Aulas 3
-DESCRIPTION:Código: 513205\\nGrupo: 1 (Clase Teórica)
-UID:513205-J-1@uao.edu.co
+DESCRIPTION:Código 513205 · Grupo 1 · Clase Teórica
 END:VEVENT
 
 END:VCALENDAR`;
-
-            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-            const link = document.createElement('a');
-            link.href = window.URL.createObjectURL(blob);
-            link.download = 'Horario_UAO_2026-1S.ics';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            // Mostrar mensaje de confirmación
-            const btn = document.querySelector('.download-btn');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '✅ ¡Descargado!';
-            btn.style.background = '#10b981';
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-            }, 2000);
-        }
-    </script>
-</body>
-</html>
