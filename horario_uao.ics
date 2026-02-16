@@ -1,98 +1,1613 @@
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//UAO//Horario 2026-1S//ES
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-X-WR-CALNAME:Horario UAO 2026-1S
+<!DOCTYPE html>
 
-BEGIN:VEVENT
-UID:522225-MO@horario
-DTSTAMP:20260101T120000Z
-DTSTART:20260126T133000Z
-DTEND:20260126T150000Z
-RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20260605T045900Z
-SUMMARY:Resistencia de Materiales I
-LOCATION:Salón 3402 - Edificio Aulas 3
-END:VEVENT
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💸 Dream Team – ¿Cómo eres con el dinero?</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0e;
+  --card: #13131a;
+  --border: #22222e;
+  --accent: #7fff6e;
+  --accent2: #4fffdf;
+  --accent3: #ff6eb4;
+  --gold: #ffd700;
+  --text: #f0f0f5;
+  --muted: #6b6b80;
+  --r: 16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Space Grotesk',sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+  position:relative;
+}
 
-BEGIN:VEVENT
-UID:544217-MO@horario
-DTSTAMP:20260101T120000Z
-DTSTART:20260126T150000Z
-DTEND:20260126T163000Z
-RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20260605T045900Z
-SUMMARY:Termodinámica
-LOCATION:Salón 3306 - Edificio Aulas 3
-END:VEVENT
+/* ── FONDO ANIMADO ── */
+.bg-orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);animation:orbFloat 8s ease-in-out infinite}
+.orb1{width:400px;height:400px;background:rgba(127,255,110,0.07);top:-100px;left:-100px;animation-delay:0s}
+.orb2{width:300px;height:300px;background:rgba(79,255,223,0.06);bottom:-50px;right:-50px;animation-delay:-3s}
+.orb3{width:250px;height:250px;background:rgba(255,110,180,0.05);top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:-5s}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,30px) scale(0.95)}}
+.orb1,.orb2{animation:orbFloat2 8s ease-in-out infinite}
+.orb2{animation-delay:-3s}
+@keyframes orbFloat2{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-30px)}}
 
-BEGIN:VEVENT
-UID:531248-MO@horario
-DTSTAMP:20260101T120000Z
-DTSTART:20260126T190000Z
-DTEND:20260126T203000Z
-RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20260605T045900Z
-SUMMARY:Mecánica II
-LOCATION:Aulas 3 Torreón 2
-END:VEVENT
+/* ── WRAPPER ── */
+.app{
+position:relative;z-index:1;
+max-width:580px;margin:0 auto;
+padding:24px 20px 80px;
+min-height:100vh;
+display:flex;flex-direction:column;
+}
 
-BEGIN:VEVENT
-UID:522225-TU@horario
-DTSTAMP:20260101T120000Z
-DTSTART:20260127T133000Z
-DTEND:20260127T150000Z
-RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20260605T045900Z
-SUMMARY:Resistencia de Materiales I
-LOCATION:Salón 4304 - Edificio Aulas 4
-END:VEVENT
+/* ── HEADER MINIMAL ── */
+.top-bar{
+display:flex;align-items:center;justify-content:space-between;
+margin-bottom:28px;
+padding:12px 18px;
+background:rgba(255,255,255,0.03);
+border:1px solid var(–border);
+border-radius:100px;
+}
+.logo{font-family:‘Syne’,sans-serif;font-size:14px;font-weight:800;letter-spacing:1px}
+.logo span{color:var(–accent)}
+.xp-display{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.xp-coin{width:26px;height:26px;background:var(–gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;animation:coinSpin 3s ease-in-out infinite}
+@keyframes coinSpin{0%,100%{transform:rotateY(0)}50%{transform:rotateY(180deg)}}
+.xp-val{color:var(–gold)}
+.streak-badge{background:rgba(255,110,60,0.15);border:1px solid rgba(255,110,60,0.3);border-radius:100px;padding:3px 10px;font-size:12px;color:#ff6e3c}
 
-BEGIN:VEVENT
-UID:513205-TU@horario
-DTSTAMP:20260101T120000Z
-DTSTART:20260127T203000Z
-DTEND:20260127T220000Z
-RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20260605T045900Z
-SUMMARY:Estructura y Propiedades de los Materiales
-LOCATION:Salón 3103 - Edificio Aulas 3
-END:VEVENT
+/* ── BARRA DE PROGRESO ── */
+.progress-zone{margin-bottom:28px}
+.prog-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.prog-label{font-size:13px;font-weight:600;color:var(–muted)}
+.prog-label b{color:var(–text)}
+.prog-pill{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(–accent);background:rgba(127,255,110,0.1);border:1px solid rgba(127,255,110,0.2);border-radius:100px;padding:3px 10px}
+.prog-track{height:8px;background:rgba(255,255,255,0.05);border-radius:100px;overflow:hidden;position:relative}
+.prog-fill{
+height:100%;
+background:linear-gradient(90deg,var(–accent),var(–accent2));
+border-radius:100px;
+transition:width 0.6s cubic-bezier(0.34,1.56,0.64,1);
+position:relative;
+}
+.prog-fill::after{
+content:’’;position:absolute;right:0;top:50%;transform:translateY(-50%);
+width:14px;height:14px;background:white;border-radius:50%;
+box-shadow:0 0 8px rgba(127,255,110,0.8);
+}
+.q-dots{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap}
+.q-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.1);transition:all 0.3s}
+.q-dot.done{background:var(–accent)}
+.q-dot.active{background:var(–accent2);transform:scale(1.5)}
 
-BEGIN:VEVENT
-UID:543238-TU@horario
-DTSTAMP:20260101T120000Z
-DTSTART:20260127T233000Z
-DTEND:20260128T023000Z
-RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20260605T045900Z
-SUMMARY:Fundamentos de Eléctrica y Electrónica (Nivelación)
-LOCATION:Por confirmar
-END:VEVENT
+/* ── CARD PREGUNTA ── */
+.q-card{
+background:var(–card);
+border:1px solid var(–border);
+border-radius:24px;
+padding:32px 28px;
+flex:1;
+display:none;
+flex-direction:column;
+gap:24px;
+animation:slideIn 0.4s cubic-bezier(0.34,1.2,0.64,1) forwards;
+position:relative;
+overflow:hidden;
+}
+.q-card::before{
+content:’’;position:absolute;top:0;left:0;right:0;height:3px;
+background:linear-gradient(90deg,var(–accent),var(–accent2),var(–accent3));
+opacity:0.5;
+}
+.q-card.active{display:flex}
+@keyframes slideIn{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideOut{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(-40px)}}
 
-BEGIN:VEVENT
-UID:544217-WE@horario
-DTSTAMP:20260101T120000Z
-DTSTART:20260128T150000Z
-DTEND:20260128T163000Z
-RRULE:FREQ=WEEKLY;BYDAY=WE;UNTIL=20260605T045900Z
-SUMMARY:Termodinámica
-LOCATION:Salón 3306 - Edificio Aulas 3
-END:VEVENT
+.q-section-tag{
+display:inline-flex;align-items:center;gap:6px;
+font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+color:var(–accent);background:rgba(127,255,110,0.1);border:1px solid rgba(127,255,110,0.2);
+border-radius:100px;padding:4px 12px;width:fit-content;
+}
+.q-emoji{font-size:40px;line-height:1;margin-bottom:-4px}
+.q-text{
+font-family:‘Syne’,sans-serif;font-size:clamp(16px,3.5vw,20px);
+font-weight:700;line-height:1.35;
+}
+.q-sub{font-size:13px;color:var(–muted);margin-top:-16px;line-height:1.5}
+.q-xp-reward{
+display:inline-flex;align-items:center;gap:5px;
+font-size:12px;color:var(–gold);
+background:rgba(255,215,0,0.1);border-radius:100px;padding:3px 10px;
+margin-top:-16px;width:fit-content;
+}
 
-BEGIN:VEVENT
-UID:531248-WE@horario
-DTSTAMP:20260101T120000Z
-DTSTART:20260128T190000Z
-DTEND:20260128T203000Z
-RRULE:FREQ=WEEKLY;BYDAY=WE;UNTIL=20260605T045900Z
-SUMMARY:Mecánica II
-LOCATION:Aulas 3 Torreón 1
-END:VEVENT
+/* ── OPCIONES ── */
+.opts{display:flex;flex-direction:column;gap:8px}
+.opts.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opts.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
 
-BEGIN:VEVENT
-UID:513205-TH@horario
-DTSTAMP:20260101T120000Z
-DTSTART:20260129T203000Z
-DTEND:20260129T220000Z
-RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20260605T045900Z
-SUMMARY:Estructura y Propiedades de los Materiales
-LOCATION:Salón 3406 - Edificio Aulas 3
-END:VEVENT
+.opt{
+display:flex;align-items:center;gap:12px;
+background:rgba(255,255,255,0.04);
+border:1.5px solid var(–border);
+border-radius:14px;padding:14px 16px;
+cursor:pointer;
+transition:all 0.2s cubic-bezier(0.34,1.2,0.64,1);
+user-select:none;font-size:14px;font-weight:500;
+position:relative;overflow:hidden;
+}
+.opt::before{
+content:’’;position:absolute;inset:0;
+background:linear-gradient(135deg,rgba(127,255,110,0.08),rgba(79,255,223,0.05));
+opacity:0;transition:opacity 0.2s;
+}
+.opt:hover{border-color:rgba(127,255,110,0.35);transform:translateY(-2px) scale(1.01)}
+.opt:hover::before{opacity:1}
+.opt.selected{
+border-color:var(–accent);
+background:rgba(127,255,110,0.08);
+transform:scale(1.02);
+}
+.opt.selected::before{opacity:1}
+.opt .opt-icon{font-size:20px;flex-shrink:0;width:32px;text-align:center}
+.opt .opt-check{
+width:20px;height:20px;border-radius:50%;border:2px solid var(–border);
+flex-shrink:0;margin-left:auto;
+display:flex;align-items:center;justify-content:center;
+transition:all 0.2s;font-size:11px;font-weight:900;
+}
+.opt.selected .opt-check{
+background:var(–accent);border-color:var(–accent);color:#0a0a0e;
+}
+.opt.selected .opt-check::after{content:‘✓’}
+.opt .opt-check-box{
+width:20px;height:20px;border-radius:6px;border:2px solid var(–border);
+flex-shrink:0;margin-left:auto;
+display:flex;align-items:center;justify-content:center;
+transition:all 0.2s;font-size:11px;
+}
+.opt.selected .opt-check-box{background:var(–accent);border-color:var(–accent);color:#0a0a0e}
+.opt.selected .opt-check-box::after{content:‘✓’;font-weight:900}
 
-END:VCALENDAR
+/* Opciones grandes con emoji (tipo quiz) */
+.opts.big .opt{
+flex-direction:column;align-items:center;text-align:center;
+padding:20px 12px;gap:8px;
+}
+.opts.big .opt .opt-icon{font-size:32px;width:auto}
+.opts.big .opt .opt-label{font-size:13px;line-height:1.3}
+.opts.big .opt .opt-check{margin:0}
+
+/* ── SLIDER ESCALA ── */
+.scale-container{padding:4px 0}
+.scale-track{position:relative;padding:16px 0}
+.scale-slider{
+width:100%;
+-webkit-appearance:none;
+appearance:none;
+height:8px;
+border-radius:100px;
+outline:none;
+cursor:pointer;
+background:linear-gradient(90deg,var(–accent) var(–pct,20%),rgba(255,255,255,0.1) var(–pct,20%));
+}
+.scale-slider::-webkit-slider-thumb{
+-webkit-appearance:none;
+width:28px;height:28px;
+border-radius:50%;
+background:white;
+cursor:pointer;
+border:3px solid var(–accent);
+box-shadow:0 0 0 6px rgba(127,255,110,0.15),0 4px 12px rgba(0,0,0,0.4);
+transition:box-shadow 0.2s;
+}
+.scale-slider::-webkit-slider-thumb:hover{box-shadow:0 0 0 10px rgba(127,255,110,0.2),0 4px 16px rgba(0,0,0,0.5)}
+.scale-labels{display:flex;justify-content:space-between;margin-top:4px;font-size:11px;color:var(–muted)}
+.scale-value-display{
+text-align:center;margin-top:12px;
+font-family:‘Syne’,sans-serif;font-size:48px;font-weight:800;
+color:var(–accent);line-height:1;
+}
+.scale-desc{text-align:center;font-size:13px;color:var(–muted);margin-top:4px}
+.scale-emojis{display:flex;justify-content:space-between;font-size:20px;margin-bottom:4px}
+
+/* ── TEXTAREA ── */
+.q-textarea{
+width:100%;background:rgba(255,255,255,0.04);
+border:1.5px solid var(–border);border-radius:14px;
+padding:14px 16px;color:var(–text);
+font-family:‘Space Grotesk’,sans-serif;font-size:14px;
+outline:none;resize:vertical;min-height:100px;
+transition:border-color 0.2s,box-shadow 0.2s;
+line-height:1.5;
+}
+.q-textarea::placeholder{color:var(–muted)}
+.q-textarea:focus{border-color:var(–accent);box-shadow:0 0 0 3px rgba(127,255,110,0.1)}
+.char-count{text-align:right;font-size:11px;color:var(–muted);margin-top:4px}
+
+/* ── INPUT TEXT ── */
+.q-input{
+width:100%;background:rgba(255,255,255,0.04);
+border:1.5px solid var(–border);border-radius:14px;
+padding:14px 16px;color:var(–text);
+font-family:‘Space Grotesk’,sans-serif;font-size:16px;
+outline:none;transition:border-color 0.2s,box-shadow 0.2s;
+}
+.q-input::placeholder{color:var(–muted)}
+.q-input:focus{border-color:var(–accent);box-shadow:0 0 0 3px rgba(127,255,110,0.1)}
+.q-input-num{text-align:center;font-size:28px;font-weight:700}
+
+/* ── BOTÓN SIGUIENTE ── */
+.btn-next{
+width:100%;padding:16px;
+background:linear-gradient(135deg,var(–accent),var(–accent2));
+color:#0a0a0e;
+border:none;border-radius:14px;
+font-family:‘Syne’,sans-serif;font-size:15px;font-weight:800;
+cursor:pointer;letter-spacing:0.5px;
+transition:all 0.2s cubic-bezier(0.34,1.2,0.64,1);
+display:flex;align-items:center;justify-content:center;gap:8px;
+position:relative;overflow:hidden;
+}
+.btn-next::before{
+content:’’;position:absolute;inset:0;
+background:white;opacity:0;transition:opacity 0.2s;
+}
+.btn-next:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 24px rgba(127,255,110,0.3)}
+.btn-next:hover::before{opacity:0.05}
+.btn-next:active{transform:scale(0.98)}
+.btn-next:disabled{opacity:0.4;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-back{
+background:transparent;border:1.5px solid var(–border);
+color:var(–muted);border-radius:12px;
+padding:12px 20px;cursor:pointer;font-family:‘Space Grotesk’,sans-serif;
+font-size:13px;font-weight:600;transition:all 0.2s;
+}
+.btn-back:hover{border-color:var(–text);color:var(–text)}
+.nav-row{display:flex;gap:10px;align-items:center}
+.nav-row .btn-next{flex:1}
+
+/* ── XP POPUP ── */
+.xp-popup{
+position:fixed;bottom:100px;right:20px;z-index:100;
+background:rgba(255,215,0,0.15);backdrop-filter:blur(10px);
+border:1px solid rgba(255,215,0,0.4);
+border-radius:100px;padding:10px 18px;
+font-size:15px;font-weight:700;color:var(–gold);
+display:flex;align-items:center;gap:8px;
+pointer-events:none;
+transform:translateY(20px);opacity:0;
+transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+.xp-popup.show{transform:translateY(0);opacity:1}
+.xp-popup.hide{transform:translateY(-30px);opacity:0}
+
+/* ── FEEDBACK INMEDIATO ── */
+.instant-feedback{
+background:rgba(127,255,110,0.07);border:1px solid rgba(127,255,110,0.2);
+border-radius:14px;padding:14px 16px;
+font-size:13px;color:var(–accent2);line-height:1.5;
+display:none;
+animation:fadeIn 0.3s ease;
+}
+.instant-feedback.show{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.instant-feedback .feed-icon{font-size:20px;margin-bottom:6px;display:block}
+
+/* ── PANTALLA INTRO ── */
+#screen-intro{
+position:fixed;inset:0;z-index:200;
+background:var(–bg);
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+padding:40px 24px;text-align:center;
+animation:introIn 0.6s ease forwards;
+}
+@keyframes introIn{from{opacity:0}to{opacity:1}}
+.intro-emoji{font-size:72px;margin-bottom:20px;animation:bounce 1s ease infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.intro-title{font-family:‘Syne’,sans-serif;font-size:clamp(28px,7vw,42px);font-weight:800;line-height:1.15;margin-bottom:14px}
+.intro-title .green{color:var(–accent)}
+.intro-desc{color:var(–muted);font-size:15px;line-height:1.6;max-width:400px;margin:0 auto 32px}
+.intro-stats{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.intro-stat{
+background:var(–card);border:1px solid var(–border);
+border-radius:12px;padding:12px 16px;
+display:flex;flex-direction:column;align-items:center;gap:4px;
+}
+.intro-stat .stat-emoji{font-size:22px}
+.intro-stat .stat-val{font-family:‘Syne’,sans-serif;font-size:15px;font-weight:700}
+.intro-stat .stat-desc{font-size:11px;color:var(–muted)}
+.btn-start{
+padding:18px 48px;
+background:linear-gradient(135deg,var(–accent),var(–accent2));
+color:#0a0a0e;border:none;border-radius:16px;
+font-family:‘Syne’,sans-serif;font-size:17px;font-weight:800;
+cursor:pointer;letter-spacing:0.5px;
+transition:all 0.2s cubic-bezier(0.34,1.56,0.64,1);
+box-shadow:0 8px 32px rgba(127,255,110,0.25);
+}
+.btn-start:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 40px rgba(127,255,110,0.35)}
+.privacy-note{margin-top:16px;font-size:12px;color:var(–muted)}
+
+/* ── PANTALLA RESULTADO FINAL ── */
+#screen-result{
+display:none;
+flex-direction:column;align-items:center;
+padding:40px 0;text-align:center;
+animation:slideIn 0.5s ease forwards;
+}
+#screen-result.active{display:flex}
+
+.result-firework{font-size:56px;margin-bottom:8px;animation:popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards}
+@keyframes popIn{from{transform:scale(0)}to{transform:scale(1)}}
+.result-profile{
+background:var(–card);border:1px solid var(–accent);
+border-radius:24px;padding:28px 24px;
+margin:20px 0;width:100%;
+box-shadow:0 0 40px rgba(127,255,110,0.1);
+}
+.result-profile-icon{font-size:52px;margin-bottom:12px}
+.result-profile-title{font-family:‘Syne’,sans-serif;font-size:22px;font-weight:800;color:var(–accent);margin-bottom:8px}
+.result-profile-desc{font-size:14px;color:var(–muted);line-height:1.6}
+.result-xp-total{
+background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.3);
+border-radius:16px;padding:16px 24px;margin:8px 0;width:100%;
+}
+.result-xp-num{font-family:‘Syne’,sans-serif;font-size:40px;font-weight:800;color:var(–gold)}
+.result-xp-label{font-size:13px;color:var(–muted);margin-top:2px}
+.result-insight{
+background:rgba(255,255,255,0.03);border:1px solid var(–border);
+border-radius:16px;padding:16px 18px;margin-top:8px;width:100%;
+text-align:left;
+}
+.result-insight-title{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(–accent2);margin-bottom:10px}
+.result-insight-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.5;margin-bottom:8px;color:var(–muted)}
+.result-insight-item:last-child{margin-bottom:0}
+.result-insight-item span:first-child{font-size:16px;flex-shrink:0}
+
+.result-share{display:flex;gap:10px;margin-top:20px;width:100%}
+.btn-share{
+flex:1;padding:14px;border-radius:12px;
+font-family:‘Syne’,sans-serif;font-size:13px;font-weight:700;
+cursor:pointer;transition:all 0.2s;border:none;
+}
+.btn-share.primary{background:var(–accent);color:#0a0a0e}
+.btn-share.secondary{background:transparent;border:1.5px solid var(–border);color:var(–muted)}
+.btn-share:hover{transform:translateY(-1px)}
+
+/* ── MINI CELEBRACIÓN ── */
+.confetti-container{position:fixed;inset:0;pointer-events:none;z-index:999;overflow:hidden}
+.confetti-piece{
+position:absolute;top:-20px;
+width:10px;height:10px;
+border-radius:2px;
+animation:confettiFall linear forwards;
+}
+@keyframes confettiFall{
+0%{transform:translateY(0) rotate(0) scaleX(1)}
+50%{transform:translateY(50vh) rotate(360deg) scaleX(-1)}
+100%{transform:translateY(110vh) rotate(720deg) scaleX(1);opacity:0}
+}
+
+/* ── SECTION TRANSITION ── */
+.section-transition{
+position:fixed;inset:0;z-index:150;
+background:var(–accent);
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+pointer-events:none;
+transform:scaleY(0);transform-origin:bottom;
+transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.section-transition.active{transform:scaleY(1);transform-origin:bottom}
+.section-transition.out{transform:scaleY(0);transform-origin:top}
+.st-icon{font-size:48px;color:#0a0a0e;animation:popIn 0.3s ease}
+.st-label{font-family:‘Syne’,sans-serif;font-size:18px;font-weight:800;color:#0a0a0e;margin-top:8px}
+
+/* ── STREAK ── */
+.streak-anim{
+position:fixed;top:50%;left:50%;
+transform:translate(-50%,-50%) scale(0);
+z-index:200;pointer-events:none;
+font-family:‘Syne’,sans-serif;font-size:36px;font-weight:800;
+color:var(–accent);text-shadow:0 0 30px rgba(127,255,110,0.5);
+transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+.streak-anim.show{transform:translate(-50%,-50%) scale(1)}
+.streak-anim.hide{transform:translate(-50%,-80%) scale(0.5);opacity:0}
+
+/* ── NOMBRE DISPLAY ── */
+.greeting{
+background:rgba(127,255,110,0.07);border:1px solid rgba(127,255,110,0.2);
+border-radius:12px;padding:10px 16px;font-size:14px;color:var(–accent);
+margin-top:-16px;display:none;
+}
+.greeting.show{display:block}
+
+@media(max-width:480px){
+.opts.grid2{grid-template-columns:1fr 1fr}
+.opts.grid3{grid-template-columns:1fr 1fr}
+.q-card{padding:24px 18px}
+.intro-stats{gap:8px}
+}
+</style>
+
+</head>
+<body>
+
+<div class="bg-orbs">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+</div>
+
+<!-- ════════════ PANTALLA INTRO ════════════ -->
+
+<div id="screen-intro">
+  <div class="intro-emoji">💸</div>
+  <div class="intro-title">¿Cómo eres con el<br><span class="green">dinero digital</span>?</div>
+  <div class="intro-desc">23 preguntas rápidas que revelan tu perfil financiero. Responde en 5 minutos y descubre qué tipo de gastador eres.</div>
+  <div class="intro-stats">
+    <div class="intro-stat"><span class="stat-emoji">⚡</span><span class="stat-val">5 min</span><span class="stat-desc">Rápido</span></div>
+    <div class="intro-stat"><span class="stat-emoji">🎯</span><span class="stat-val">23 preguntas</span><span class="stat-desc">Encuesta</span></div>
+    <div class="intro-stat"><span class="stat-emoji">🏅</span><span class="stat-val">+230 XP</span><span class="stat-desc">Posibles</span></div>
+    <div class="intro-stat"><span class="stat-emoji">🔒</span><span class="stat-val">Anónimo</span><span class="stat-desc">100%</span></div>
+  </div>
+  <button class="btn-start" onclick="startSurvey()">¡Empezar ahora! →</button>
+  <div class="privacy-note">Dream Team · Investigación 2025 · Cali</div>
+</div>
+
+<!-- ════════════ APP ════════════ -->
+
+<div class="app" id="app-main" style="display:none">
+
+  <!-- TOP BAR -->
+
+  <div class="top-bar">
+    <div class="logo">Dream<span>Team</span></div>
+    <div class="xp-display">
+      <div class="xp-coin">⭐</div>
+      <span class="xp-val" id="xpVal">0 XP</span>
+    </div>
+    <div class="streak-badge" id="streakBadge">🔥 0</div>
+  </div>
+
+  <!-- PROGRESO -->
+
+  <div class="progress-zone">
+    <div class="prog-meta">
+      <div class="prog-label">Pregunta <b id="progNum">1</b> de <b>23</b></div>
+      <div class="prog-pill" id="sectionTag">Sección 1</div>
+    </div>
+    <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    <div class="q-dots" id="qDots"></div>
+  </div>
+
+  <!-- ══ PREGUNTAS ══ -->
+
+  <!-- Q NOMBRE -->
+
+  <div class="q-card" id="q-nombre">
+    <div class="q-section-tag">👋 Antes de empezar</div>
+    <div class="q-emoji">🙋</div>
+    <div class="q-text">¿Cómo te llamamos?</div>
+    <input class="q-input" id="inp-nombre" placeholder="Tu nombre o apodo..." autocomplete="off">
+    <div class="greeting" id="greeting"></div>
+    <button class="btn-next" onclick="nextQ()">Siguiente <span>→</span></button>
+  </div>
+
+  <!-- Q1 EDAD -->
+
+  <div class="q-card" id="q-1">
+    <div class="q-section-tag">🧑 Sobre ti</div>
+    <div class="q-emoji">🎂</div>
+    <div class="q-text">¿Cuántos años tienes?</div>
+    <input class="q-input q-input-num" id="inp-q1" type="number" placeholder="21" min="15" max="40">
+    <div class="q-xp-reward">⭐ +10 XP</div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" onclick="nextQ()">Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q2 GÉNERO -->
+
+  <div class="q-card" id="q-2">
+    <div class="q-section-tag">🧑 Sobre ti</div>
+    <div class="q-emoji">🙌</div>
+    <div class="q-text">¿Cuál es tu género?</div>
+    <div class="opts grid2">
+      <div class="opt" data-q="q2" data-v="Masculino" onclick="selectOpt(this)">
+        <span class="opt-icon">👦</span><span>Masculino</span><span class="opt-check"></span>
+      </div>
+      <div class="opt" data-q="q2" data-v="Femenino" onclick="selectOpt(this)">
+        <span class="opt-icon">👩</span><span>Femenino</span><span class="opt-check"></span>
+      </div>
+      <div class="opt" data-q="q2" data-v="Otro" onclick="selectOpt(this)">
+        <span class="opt-icon">🌈</span><span>Otro</span><span class="opt-check"></span>
+      </div>
+      <div class="opt" data-q="q2" data-v="Prefiero no decir" onclick="selectOpt(this)">
+        <span class="opt-icon">🤐</span><span>Prefiero no decir</span><span class="opt-check"></span>
+      </div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q2" onclick="nextQ()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q3 UNIVERSIDAD -->
+
+  <div class="q-card" id="q-3">
+    <div class="q-section-tag">🧑 Sobre ti</div>
+    <div class="q-emoji">🎓</div>
+    <div class="q-text">¿En qué universidad estudias?</div>
+    <div class="opts grid2">
+      <div class="opt" data-q="q3" data-v="Javeriana" onclick="selectOpt(this)"><span class="opt-icon">📚</span><span>Javeriana</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q3" data-v="Icesi" onclick="selectOpt(this)"><span class="opt-icon">🏛️</span><span>Icesi</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q3" data-v="Autonoma" onclick="selectOpt(this)"><span class="opt-icon">🎓</span><span>Autónoma</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q3" data-v="San Buenaventura" onclick="selectOpt(this)"><span class="opt-icon">✝️</span><span>San Buenaventura</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q3" data-v="USC" onclick="selectOpt(this)"><span class="opt-icon">🏫</span><span>USC</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q3" data-v="Otra" onclick="selectOpt(this)"><span class="opt-icon">📍</span><span>Otra</span><span class="opt-check"></span></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q3" onclick="nextQ()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q4 SEMESTRE -->
+
+  <div class="q-card" id="q-4">
+    <div class="q-section-tag">🧑 Sobre ti</div>
+    <div class="q-emoji">📅</div>
+    <div class="q-text">¿En qué semestre vas?</div>
+    <div class="opts grid3">
+      <div class="opt" data-q="q4" data-v="1-2" onclick="selectOpt(this)"><span class="opt-icon">🐣</span><span>1–2</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q4" data-v="3-4" onclick="selectOpt(this)"><span class="opt-icon">🌱</span><span>3–4</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q4" data-v="5-6" onclick="selectOpt(this)"><span class="opt-icon">🌿</span><span>5–6</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q4" data-v="7-8" onclick="selectOpt(this)"><span class="opt-icon">🌳</span><span>7–8</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q4" data-v="9-10" onclick="selectOpt(this)"><span class="opt-icon">🚀</span><span>9–10</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q4" data-v="Más de 10" onclick="selectOpt(this)"><span class="opt-icon">🏆</span><span>+10</span><span class="opt-check"></span></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q4" onclick="nextQ()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q5 TRABAJO -->
+
+  <div class="q-card" id="q-5">
+    <div class="q-section-tag">💼 Finanzas</div>
+    <div class="q-emoji">💼</div>
+    <div class="q-text">¿Trabajas actualmente?</div>
+    <div class="opts">
+      <div class="opt" data-q="q5" data-v="Sí tiempo completo" onclick="selectOpt(this)"><span class="opt-icon">💪</span><span>Sí, tiempo completo</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q5" data-v="Sí medio tiempo" onclick="selectOpt(this)"><span class="opt-icon">⚡</span><span>Sí, medio tiempo</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q5" data-v="Sí ocasional" onclick="selectOpt(this)"><span class="opt-icon">🎯</span><span>Sí, ocasionalmente</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q5" data-v="No" onclick="selectOpt(this)"><span class="opt-icon">📖</span><span>No, solo estudio</span><span class="opt-check"></span></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q5" onclick="nextQ()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q6 QUIÉN FINANCIA -->
+
+  <div class="q-card" id="q-6">
+    <div class="q-section-tag">💼 Finanzas</div>
+    <div class="q-emoji">💰</div>
+    <div class="q-text">¿Quién financia tus gastos?</div>
+    <div class="opts grid2">
+      <div class="opt" data-q="q6" data-v="Yo mismo/a" onclick="selectOpt(this)"><span class="opt-icon">💪</span><span>Yo mismo/a</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q6" data-v="Padres" onclick="selectOpt(this)"><span class="opt-icon">👨‍👩‍👦</span><span>Papás</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q6" data-v="Mixto" onclick="selectOpt(this)"><span class="opt-icon">🤝</span><span>Mixto (yo + familia)</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q6" data-v="Beca" onclick="selectOpt(this)"><span class="opt-icon">🎓</span><span>Beca</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q6" data-v="Préstamo" onclick="selectOpt(this)"><span class="opt-icon">🏦</span><span>Préstamo</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q6" data-v="Otro" onclick="selectOpt(this)"><span class="opt-icon">🔮</span><span>Otro</span><span class="opt-check"></span></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q6" onclick="nextQ()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q7a ORIGEN DINERO -->
+
+  <div class="q-card" id="q-7a">
+    <div class="q-section-tag">💸 Hábitos de gasto</div>
+    <div class="q-emoji">🏧</div>
+    <div class="q-text">¿Cómo obtienes tu dinero mensual?</div>
+    <div class="opts">
+      <div class="opt" data-q="q7a" data-v="Lo genero trabajando" onclick="selectOpt(this)"><span class="opt-icon">⚙️</span><span>Lo genero trabajando</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q7a" data-v="Lo recibo de mis padres" onclick="selectOpt(this)"><span class="opt-icon">💝</span><span>Lo recibo de mis padres</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q7a" data-v="Combinación" onclick="selectOpt(this)"><span class="opt-icon">🔄</span><span>Combinación</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q7a" data-v="Beca" onclick="selectOpt(this)"><span class="opt-icon">🎓</span><span>Beca</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q7a" data-v="Otro" onclick="selectOpt(this)"><span class="opt-icon">✨</span><span>Otro</span><span class="opt-check"></span></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q7a" onclick="nextQ()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q7b MONTO -->
+
+  <div class="q-card" id="q-7b">
+    <div class="q-section-tag">💸 Hábitos de gasto</div>
+    <div class="q-emoji">💵</div>
+    <div class="q-text">¿Cuánto manejas mensualmente?</div>
+    <div class="q-sub">Tu rango de ingresos/gasificación</div>
+    <div class="opts">
+      <div class="opt" data-q="q7b" data-v="Menos de $200k" onclick="selectOpt(this)"><span class="opt-icon">🤏</span><span>Menos de $200.000</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q7b" data-v="$200k-$500k" onclick="selectOpt(this)"><span class="opt-icon">💴</span><span>$200.000 – $500.000</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q7b" data-v="$500k-$800k" onclick="selectOpt(this)"><span class="opt-icon">💵</span><span>$500.000 – $800.000</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q7b" data-v="$800k-$1.2M" onclick="selectOpt(this)"><span class="opt-icon">💶</span><span>$800.000 – $1.200.000</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q7b" data-v="Más de $1.2M" onclick="selectOpt(this)"><span class="opt-icon">🤑</span><span>Más de $1.200.000</span><span class="opt-check"></span></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q7b" onclick="nextQ()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q8 CATEGORÍAS -->
+
+  <div class="q-card" id="q-8">
+    <div class="q-section-tag">💸 Hábitos de gasto</div>
+    <div class="q-emoji">🛒</div>
+    <div class="q-text">¿En qué categorías gastas tu plata?</div>
+    <div class="q-sub">Puedes elegir varias opciones 👇</div>
+    <div class="opts grid2">
+      <div class="opt multi" data-q="q8" data-v="Transporte" onclick="toggleMulti(this)"><span class="opt-icon">🚌</span><span>Transporte</span><span class="opt-check-box"></span></div>
+      <div class="opt multi" data-q="q8" data-v="Alimentación" onclick="toggleMulti(this)"><span class="opt-icon">🍔</span><span>Alimentación</span><span class="opt-check-box"></span></div>
+      <div class="opt multi" data-q="q8" data-v="Ocio" onclick="toggleMulti(this)"><span class="opt-icon">🎉</span><span>Ocio / Diversión</span><span class="opt-check-box"></span></div>
+      <div class="opt multi" data-q="q8" data-v="Ropa" onclick="toggleMulti(this)"><span class="opt-icon">👟</span><span>Ropa</span><span class="opt-check-box"></span></div>
+      <div class="opt multi" data-q="q8" data-v="Suscripciones" onclick="toggleMulti(this)"><span class="opt-icon">📱</span><span>Suscripciones</span><span class="opt-check-box"></span></div>
+      <div class="opt multi" data-q="q8" data-v="Materiales académicos" onclick="toggleMulti(this)"><span class="opt-icon">📚</span><span>Material académico</span><span class="opt-check-box"></span></div>
+      <div class="opt multi" data-q="q8" data-v="Ahorro" onclick="toggleMulti(this)"><span class="opt-icon">🐷</span><span>Ahorro</span><span class="opt-check-box"></span></div>
+      <div class="opt multi" data-q="q8" data-v="Otro" onclick="toggleMulti(this)"><span class="opt-icon">➕</span><span>Otro</span><span class="opt-check-box"></span></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" onclick="nextQ()">Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q9 QUEDAR SIN DINERO -->
+
+  <div class="q-card" id="q-9">
+    <div class="q-section-tag">💸 Hábitos de gasto</div>
+    <div class="q-emoji">😬</div>
+    <div class="q-text">¿Qué tan seguido te quedas sin dinero antes de fin de mes?</div>
+    <div class="opts">
+      <div class="opt" data-q="q9" data-v="Nunca" onclick="selectOpt(this)"><span class="opt-icon">😎</span><span>Nunca — soy un crack</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q9" data-v="Casi nunca" onclick="selectOpt(this)"><span class="opt-icon">😌</span><span>Casi nunca</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q9" data-v="A veces" onclick="selectOpt(this)"><span class="opt-icon">😅</span><span>A veces me pasa</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q9" data-v="Frecuentemente" onclick="selectOpt(this)"><span class="opt-icon">😰</span><span>Frecuentemente 😬</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q9" data-v="Siempre" onclick="selectOpt(this)"><span class="opt-icon">💸</span><span>Siempre, sin falta</span><span class="opt-check"></span></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q9" onclick="nextQ()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q9b POR QUÉ -->
+
+  <div class="q-card" id="q-9b">
+    <div class="q-section-tag">💸 Hábitos de gasto</div>
+    <div class="q-emoji">🤔</div>
+    <div class="q-text">¿Por qué crees que te pasa eso con la plata? <span style="color:var(--muted);font-size:14px;font-weight:400">(opcional)</span></div>
+    <textarea class="q-textarea" id="inp-q9b" placeholder="Ej: Gasto mucho en salidas, no llevo control..." oninput="updateCharCount(this,'cnt-9b')"></textarea>
+    <div class="char-count" id="cnt-9b">0 / 200</div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" onclick="nextQ()">Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q10 FÍSICO VS DIGITAL -->
+
+  <div class="q-card" id="q-10">
+    <div class="q-section-tag">💳 Dinero Físico vs Digital</div>
+    <div class="q-emoji">⚡</div>
+    <div class="q-text">¿Qué porcentaje de tus pagos semanales son digitales?</div>
+    <div class="scale-container">
+      <div class="scale-emojis"><span>💵</span><span>📱</span></div>
+      <div class="opts">
+        <div class="opt" data-q="q10" data-v="100% Efectivo / 0% Digital" onclick="selectOpt(this)"><span class="opt-icon">💵</span><span>100% Efectivo</span><span class="opt-check"></span></div>
+        <div class="opt" data-q="q10" data-v="75% Efectivo / 25% Digital" onclick="selectOpt(this)"><span class="opt-icon">💵</span><span>75% Efectivo / 25% Digital</span><span class="opt-check"></span></div>
+        <div class="opt" data-q="q10" data-v="50% Efectivo / 50% Digital" onclick="selectOpt(this)"><span class="opt-icon">⚖️</span><span>50/50 Mitad y mitad</span><span class="opt-check"></span></div>
+        <div class="opt" data-q="q10" data-v="25% Efectivo / 75% Digital" onclick="selectOpt(this)"><span class="opt-icon">📱</span><span>25% Efectivo / 75% Digital</span><span class="opt-check"></span></div>
+        <div class="opt" data-q="q10" data-v="0% Efectivo / 100% Digital" onclick="selectOpt(this)"><span class="opt-icon">🤳</span><span>100% Digital — ni toco efectivo</span><span class="opt-check"></span></div>
+      </div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q10" onclick="nextQ()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q11 DIFERENCIA PERCIBIDA -->
+
+  <div class="q-card" id="q-11">
+    <div class="q-section-tag">💳 Dinero Físico vs Digital</div>
+    <div class="q-emoji">🧠</div>
+    <div class="q-text">¿Con cuál gastas más? ¿Por qué crees que es así?</div>
+    <div class="q-sub">Cuéntanos en tus palabras</div>
+    <textarea class="q-textarea" id="inp-q11" placeholder="Ej: Con efectivo gasto menos porque lo veo físicamente salir..." oninput="updateCharCount(this,'cnt-11')"></textarea>
+    <div class="char-count" id="cnt-11">0 / 200</div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" onclick="nextQ()">Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q12 REGISTRO -->
+
+  <div class="q-card" id="q-12">
+    <div class="q-section-tag">💳 Dinero Físico vs Digital</div>
+    <div class="q-emoji">📊</div>
+    <div class="q-text">¿Llevas registro de tus gastos?</div>
+    <div class="opts grid2" style="gap:14px">
+      <div class="opt" data-q="q12" data-v="Sí" onclick="selectOpt(this,true)" style="flex-direction:column;align-items:center;padding:24px 16px;text-align:center">
+        <span style="font-size:36px">✅</span>
+        <span style="font-size:16px;font-weight:700">Sí</span>
+        <span class="opt-check" style="margin:0"></span>
+      </div>
+      <div class="opt" data-q="q12" data-v="No" onclick="selectOpt(this,true)" style="flex-direction:column;align-items:center;padding:24px 16px;text-align:center">
+        <span style="font-size:36px">❌</span>
+        <span style="font-size:16px;font-weight:700">No</span>
+        <span class="opt-check" style="margin:0"></span>
+      </div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q12" onclick="nextQ()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q12b POR QUÉ REGISTRO -->
+
+  <div class="q-card" id="q-12b">
+    <div class="q-section-tag">💳 Dinero Físico vs Digital</div>
+    <div class="q-emoji">📝</div>
+    <div class="q-text">¿Por qué sí o por qué no llevas registro?</div>
+    <textarea class="q-textarea" id="inp-q12b" placeholder="Explica brevemente tu razón..." oninput="updateCharCount(this,'cnt-12b')"></textarea>
+    <div class="char-count" id="cnt-12b">0 / 200</div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" onclick="nextQ()">Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q13 EXPERIENCIA PAGO -->
+
+  <div class="q-card" id="q-13">
+    <div class="q-section-tag">💳 Dinero Físico vs Digital</div>
+    <div class="q-emoji">🔍</div>
+    <div class="q-text">¿Cuál describe mejor tu experiencia al pagar?</div>
+    <div class="opts">
+      <div class="opt" data-q="q13" data-v="Con efectivo soy más consciente" onclick="selectOpt(this)"><span class="opt-icon">💵</span><span>Con efectivo soy más consciente del gasto</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q13" data-v="Con digital pierdo la noción" onclick="selectOpt(this)"><span class="opt-icon">😵</span><span>Con digital pierdo la noción del dinero</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q13" data-v="Me da igual, soy igual de consciente" onclick="selectOpt(this)"><span class="opt-icon">🤷</span><span>Me da igual, soy igual de consciente</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q13" data-v="Con digital tengo mejor control" onclick="selectOpt(this)"><span class="opt-icon">📊</span><span>Con digital tengo mejor control (historial)</span><span class="opt-check"></span></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q13" onclick="nextQ()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q14 ESCALA -->
+
+  <div class="q-card" id="q-14">
+    <div class="q-section-tag">🧠 Percepción del valor</div>
+    <div class="q-emoji">💭</div>
+    <div class="q-text">El dinero digital no se siente como dinero real — cuesta menos "soltarlo"</div>
+    <div class="scale-emojis"><span>🙅</span><span>🤔</span><span>💯</span></div>
+    <input class="scale-slider" id="sl-q14" type="range" min="1" max="5" value="3" oninput="updateSlider('q14',this.value)" style="--pct:50%">
+    <div class="scale-labels"><span>En desacuerdo</span><span>Totalmente de acuerdo</span></div>
+    <div class="scale-value-display" id="sv-q14">3</div>
+    <div class="scale-desc" id="sd-q14">Neutral</div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" onclick="nextQ()">Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q15 ESCALA -->
+
+  <div class="q-card" id="q-15">
+    <div class="q-section-tag">🧠 Percepción del valor</div>
+    <div class="q-emoji">😖</div>
+    <div class="q-text">Gastar $50.000 en efectivo "duele" más que transferir $50.000</div>
+    <div class="scale-emojis"><span>🙅</span><span>🤔</span><span>💯</span></div>
+    <input class="scale-slider" id="sl-q15" type="range" min="1" max="5" value="3" oninput="updateSlider('q15',this.value)" style="--pct:50%">
+    <div class="scale-labels"><span>En desacuerdo</span><span>Totalmente de acuerdo</span></div>
+    <div class="scale-value-display" id="sv-q15">3</div>
+    <div class="scale-desc" id="sd-q15">Neutral</div>
+    <div class="instant-feedback" id="fb-q15"></div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" onclick="nextQ()">Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q15b ESCALA -->
+
+  <div class="q-card" id="q-15b">
+    <div class="q-section-tag">🧠 Percepción del valor</div>
+    <div class="q-emoji">🤑</div>
+    <div class="q-text">El dinero físico se siente de "menor valor" — es más fácil gastarlo que hacer una transferencia</div>
+    <div class="scale-emojis"><span>🙅</span><span>🤔</span><span>💯</span></div>
+    <input class="scale-slider" id="sl-q15b" type="range" min="1" max="5" value="3" oninput="updateSlider('q15b',this.value)" style="--pct:50%">
+    <div class="scale-labels"><span>En desacuerdo</span><span>Totalmente de acuerdo</span></div>
+    <div class="scale-value-display" id="sv-q15b">3</div>
+    <div class="scale-desc" id="sd-q15b">Neutral</div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" onclick="nextQ()">Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q16 ESCALA -->
+
+  <div class="q-card" id="q-16">
+    <div class="q-section-tag">🧠 Percepción del valor</div>
+    <div class="q-emoji">🛍️</div>
+    <div class="q-text">Cuando pago digital hago compras que no haría con efectivo</div>
+    <div class="scale-emojis"><span>🙅</span><span>🤔</span><span>💯</span></div>
+    <input class="scale-slider" id="sl-q16" type="range" min="1" max="5" value="3" oninput="updateSlider('q16',this.value)" style="--pct:50%">
+    <div class="scale-labels"><span>En desacuerdo</span><span>Totalmente de acuerdo</span></div>
+    <div class="scale-value-display" id="sv-q16">3</div>
+    <div class="scale-desc" id="sd-q16">Neutral</div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" onclick="nextQ()">Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q17 ESCALA -->
+
+  <div class="q-card" id="q-17">
+    <div class="q-section-tag">🧠 Percepción del valor</div>
+    <div class="q-emoji">😬</div>
+    <div class="q-text">Me arrepiento más de compras hechas con tarjeta/digital que con efectivo</div>
+    <div class="scale-emojis"><span>🙅</span><span>🤔</span><span>💯</span></div>
+    <input class="scale-slider" id="sl-q17" type="range" min="1" max="5" value="3" oninput="updateSlider('q17',this.value)" style="--pct:50%">
+    <div class="scale-labels"><span>En desacuerdo</span><span>Totalmente de acuerdo</span></div>
+    <div class="scale-value-display" id="sv-q17">3</div>
+    <div class="scale-desc" id="sd-q17">Neutral</div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" onclick="nextQ()">Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q17b ESCALA -->
+
+  <div class="q-card" id="q-17b">
+    <div class="q-section-tag">🧠 Percepción del valor</div>
+    <div class="q-emoji">🤷</div>
+    <div class="q-text">Me es indiferente el método de pago — percibo el valor del dinero igual</div>
+    <div class="scale-emojis"><span>🙅</span><span>🤔</span><span>💯</span></div>
+    <input class="scale-slider" id="sl-q17b" type="range" min="1" max="5" value="3" oninput="updateSlider('q17b',this.value)" style="--pct:50%">
+    <div class="scale-labels"><span>En desacuerdo</span><span>Totalmente de acuerdo</span></div>
+    <div class="scale-value-display" id="sv-q17b">3</div>
+    <div class="scale-desc" id="sd-q17b">Neutral</div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" onclick="nextQ()">Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q18 EDUCACIÓN FINANCIERA -->
+
+  <div class="q-card" id="q-18">
+    <div class="q-section-tag">📚 Educación Financiera</div>
+    <div class="q-emoji">🏦</div>
+    <div class="q-text">¿Has recibido educación financiera formal?</div>
+    <div class="opts">
+      <div class="opt" data-q="q18" data-v="Sí, mucha" onclick="selectOpt(this)"><span class="opt-icon">🎓</span><span>Sí, mucha</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q18" data-v="Sí, un poco" onclick="selectOpt(this)"><span class="opt-icon">📖</span><span>Sí, un poco</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q18" data-v="Más o menos" onclick="selectOpt(this)"><span class="opt-icon">🤏</span><span>Más o menos</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q18" data-v="No, nada" onclick="selectOpt(this)"><span class="opt-icon">😅</span><span>No, nada de nada</span><span class="opt-check"></span></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q18" onclick="nextQ()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q19 PROBLEMA -->
+
+  <div class="q-card" id="q-19">
+    <div class="q-section-tag">📚 Educación Financiera</div>
+    <div class="q-emoji">🔎</div>
+    <div class="q-text">Tu problema con el dinero es principalmente…</div>
+    <div class="opts">
+      <div class="opt" data-q="q19" data-v="Falta de educación financiera" onclick="selectOpt(this)"><span class="opt-icon">📚</span><span>Falta de educación financiera</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q19" data-v="Falta de control / disciplina" onclick="selectOpt(this)"><span class="opt-icon">🎯</span><span>Falta de control / disciplina</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q19" data-v="Falta de conciencia del gasto" onclick="selectOpt(this)"><span class="opt-icon">👁️</span><span>No soy consciente de lo que gasto</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q19" data-v="No tengo problema" onclick="selectOpt(this)"><span class="opt-icon">😎</span><span>No tengo problema con el dinero</span><span class="opt-check"></span></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q19" onclick="nextQ()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q20 PRESUPUESTO -->
+
+  <div class="q-card" id="q-20">
+    <div class="q-section-tag">📚 Educación Financiera</div>
+    <div class="q-emoji">📅</div>
+    <div class="q-text">¿Te estableces presupuestos mensuales?</div>
+    <div class="opts">
+      <div class="opt" data-q="q20" data-v="Sí y los cumplo" onclick="selectOpt(this)"><span class="opt-icon">✅</span><span>Sí y los cumplo — soy disciplinado/a</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q20" data-v="Sí pero no los cumplo" onclick="selectOpt(this)"><span class="opt-icon">📝</span><span>Sí los hago pero no los cumplo 😅</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q20" data-v="A veces" onclick="selectOpt(this)"><span class="opt-icon">🤔</span><span>A veces me lo propongo</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q20" data-v="No" onclick="selectOpt(this)"><span class="opt-icon">❌</span><span>No, eso no es para mí</span><span class="opt-check"></span></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q20" onclick="nextQ()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q21 APPS GASTO -->
+
+  <div class="q-card" id="q-21">
+    <div class="q-section-tag">📲 Pago Digital</div>
+    <div class="q-emoji">📲</div>
+    <div class="q-text">¿Sientes que Nequi, Daviplata, PSE… te hacen gastar MÁS?</div>
+    <div class="opts">
+      <div class="opt" data-q="q21" data-v="Definitivamente sí" onclick="selectOpt(this)"><span class="opt-icon">🚨</span><span>Definitivamente sí</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q21" data-v="Creo que sí" onclick="selectOpt(this)"><span class="opt-icon">🤔</span><span>Creo que sí</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q21" data-v="No creo" onclick="selectOpt(this)"><span class="opt-icon">🙂</span><span>No creo que me afecte</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q21" data-v="Definitivamente no" onclick="selectOpt(this)"><span class="opt-icon">🛡️</span><span>Definitivamente no</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q21" data-v="No sé" onclick="selectOpt(this)"><span class="opt-icon">😶</span><span>No sé / No estoy seguro/a</span><span class="opt-check"></span></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q21" onclick="nextQ()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q22 COMPRA IMPULSIVA -->
+
+  <div class="q-card" id="q-22">
+    <div class="q-section-tag">📲 Pago Digital</div>
+    <div class="q-emoji">🛍️</div>
+    <div class="q-text">¿Has comprado algo por impulso porque era fácil pagarlo digitalmente?</div>
+    <div class="opts grid2" style="gap:14px">
+      <div class="opt" data-q="q22" data-v="Sí, varias veces" onclick="selectOpt(this)" style="flex-direction:column;align-items:center;padding:20px 12px;text-align:center">
+        <span style="font-size:32px">😳</span><span style="font-weight:600">Sí, varias veces</span><span class="opt-check" style="margin:0"></span>
+      </div>
+      <div class="opt" data-q="q22" data-v="Sí, alguna vez" onclick="selectOpt(this)" style="flex-direction:column;align-items:center;padding:20px 12px;text-align:center">
+        <span style="font-size:32px">😅</span><span style="font-weight:600">Sí, alguna vez</span><span class="opt-check" style="margin:0"></span>
+      </div>
+      <div class="opt" data-q="q22" data-v="No recuerdo" onclick="selectOpt(this)" style="flex-direction:column;align-items:center;padding:20px 12px;text-align:center">
+        <span style="font-size:32px">🤷</span><span style="font-weight:600">No recuerdo</span><span class="opt-check" style="margin:0"></span>
+      </div>
+      <div class="opt" data-q="q22" data-v="No, nunca" onclick="selectOpt(this)" style="flex-direction:column;align-items:center;padding:20px 12px;text-align:center">
+        <span style="font-size:32px">😎</span><span style="font-weight:600">No, nunca</span><span class="opt-check" style="margin:0"></span>
+      </div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q22" onclick="nextQ()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Q23 SOLO EFECTIVO -->
+
+  <div class="q-card" id="q-23">
+    <div class="q-section-tag">📲 Pago Digital</div>
+    <div class="q-emoji">🧐</div>
+    <div class="q-text">Si usaras SOLO efectivo durante una semana, ¿crees que gastarías diferente?</div>
+    <div class="opts">
+      <div class="opt" data-q="q23" data-v="Gastaría mucho menos" onclick="selectOpt(this,false,true)"><span class="opt-icon">📉</span><span>Gastaría mucho menos</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q23" data-v="Gastaría un poco menos" onclick="selectOpt(this,false,true)"><span class="opt-icon">📉</span><span>Gastaría un poco menos</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q23" data-v="Gastaría igual" onclick="selectOpt(this,false,true)"><span class="opt-icon">➡️</span><span>Gastaría igual</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q23" data-v="Gastaría un poco más" onclick="selectOpt(this,false,true)"><span class="opt-icon">📈</span><span>Gastaría un poco más</span><span class="opt-check"></span></div>
+      <div class="opt" data-q="q23" data-v="No sé" onclick="selectOpt(this,false,true)"><span class="opt-icon">🤔</span><span>No sé</span><span class="opt-check"></span></div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="prevQ()">←</button>
+      <button class="btn-next" id="btn-q23" onclick="submitSurvey()">¡Enviar y ver mi perfil! 🎉</button>
+    </div>
+  </div>
+
+  <!-- PANTALLA RESULTADO -->
+
+  <div id="screen-result">
+    <div class="result-firework" id="resultFirework">🎉</div>
+    <div style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;margin-bottom:4px" id="resultName">¡Lo lograste!</div>
+    <div style="color:var(--muted);font-size:14px;margin-bottom:20px">Tu perfil financiero está listo</div>
+    <div class="result-xp-total">
+      <div class="result-xp-num" id="resultXP">0</div>
+      <div class="result-xp-label">XP acumulados — ¡Gracias por participar! 🏅</div>
+    </div>
+    <div class="result-profile">
+      <div class="result-profile-icon" id="profileIcon">💸</div>
+      <div class="result-profile-title" id="profileTitle">Cargando...</div>
+      <div class="result-profile-desc" id="profileDesc">...</div>
+    </div>
+    <div class="result-insight">
+      <div class="result-insight-title">🔍 Basado en tus respuestas</div>
+      <div id="insightList"></div>
+    </div>
+    <div class="result-share">
+      <button class="btn-share secondary" onclick="resetSurvey()">↩ Volver al inicio</button>
+    </div>
+    <div style="margin-top:20px;font-size:12px;color:var(--muted);text-align:center">Dream Team · Investigación 2025 · Cali 🏙️</div>
+  </div>
+
+</div><!-- /app -->
+
+<!-- POPUP XP -->
+
+<div class="xp-popup" id="xpPopup">⭐ +10 XP</div>
+
+<!-- STREAK -->
+
+<div class="streak-anim" id="streakAnim"></div>
+
+<!-- SECTION TRANSITION -->
+
+<div class="section-transition" id="secTransition">
+  <div class="st-icon" id="stIcon">💸</div>
+  <div class="st-label" id="stLabel">Sección 2</div>
+</div>
+
+<!-- CONFETTI -->
+
+<div class="confetti-container" id="confettiContainer"></div>
+
+<script>
+// ══════════════════════════════════════════════
+//  DATOS DE LA ENCUESTA
+// ══════════════════════════════════════════════
+const QUESTIONS = [
+  'nombre','1','2','3','4','5','6',
+  '7a','7b','8','9','9b','10','11','12','12b','13',
+  '14','15','15b','16','17','17b',
+  '18','19','20','21','22','23'
+];
+const TOTAL = QUESTIONS.length; // 29 pasos
+const REAL_QS = 23; // preguntas numeradas para mostrar
+
+// Secciones
+const SECTIONS = {
+  'nombre': {tag:'👋 Bienvenida', icon:'👋'},
+  '1': {tag:'🧑 Sobre ti', icon:'🧑'}, '2':{tag:'🧑 Sobre ti', icon:'🧑'},
+  '3':{tag:'🧑 Sobre ti', icon:'🧑'}, '4':{tag:'🧑 Sobre ti', icon:'🧑'},
+  '5':{tag:'💼 Finanzas', icon:'💼'}, '6':{tag:'💼 Finanzas', icon:'💼'},
+  '7a':{tag:'💸 Hábitos', icon:'💸'}, '7b':{tag:'💸 Hábitos', icon:'💸'},
+  '8':{tag:'💸 Hábitos', icon:'💸'}, '9':{tag:'💸 Hábitos', icon:'💸'},
+  '9b':{tag:'💸 Hábitos', icon:'💸'}, '10':{tag:'💳 Físico vs Digital', icon:'💳'},
+  '11':{tag:'💳 Físico vs Digital', icon:'💳'}, '12':{tag:'💳 Físico vs Digital', icon:'💳'},
+  '12b':{tag:'💳 Físico vs Digital', icon:'💳'}, '13':{tag:'💳 Físico vs Digital', icon:'💳'},
+  '14':{tag:'🧠 Percepción', icon:'🧠'}, '15':{tag:'🧠 Percepción', icon:'🧠'},
+  '15b':{tag:'🧠 Percepción', icon:'🧠'}, '16':{tag:'🧠 Percepción', icon:'🧠'},
+  '17':{tag:'🧠 Percepción', icon:'🧠'}, '17b':{tag:'🧠 Percepción', icon:'🧠'},
+  '18':{tag:'📚 Educación Fin.', icon:'📚'}, '19':{tag:'📚 Educación Fin.', icon:'📚'},
+  '20':{tag:'📚 Educación Fin.', icon:'📚'}, '21':{tag:'📲 Pago Digital', icon:'📲'},
+  '22':{tag:'📲 Pago Digital', icon:'📲'}, '23':{tag:'📲 Pago Digital', icon:'📲'},
+};
+
+const SCALE_DESCS = {
+  1:'Totalmente en desacuerdo 🙅',
+  2:'En desacuerdo 😕',
+  3:'Neutral 🤔',
+  4:'De acuerdo 👍',
+  5:'Totalmente de acuerdo 💯'
+};
+
+// ── Estado
+let currentIdx = 0;
+let xp = 0;
+let streak = 0;
+let answered = {};
+let userName = '';
+let scaleValues = {};
+
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwqN1pWm_t-iz3RE1Bwi5vcrxwsHMNFzSBm6XHIXW_ql6sJ7MhWZi1Jha0DTZKSlb3e/exec';
+
+// ══════════════════════════════════════════════
+//  INICIO
+// ══════════════════════════════════════════════
+function startSurvey(){
+  document.getElementById('screen-intro').style.animation = 'fadeOut 0.3s ease forwards';
+  document.getElementById('screen-intro').style.opacity = '0';
+  setTimeout(()=>{
+    document.getElementById('screen-intro').style.display = 'none';
+    document.getElementById('app-main').style.display = 'flex';
+    buildDots();
+    showQuestion(0);
+  }, 300);
+}
+
+function buildDots(){
+  const d = document.getElementById('qDots');
+  d.innerHTML = '';
+  for(let i=0;i<TOTAL;i++){
+    const el = document.createElement('div');
+    el.className = 'q-dot';
+    el.id = 'dot-'+i;
+    d.appendChild(el);
+  }
+}
+
+// ══════════════════════════════════════════════
+//  NAVEGACIÓN
+// ══════════════════════════════════════════════
+function showQuestion(idx){
+  // Ocultar todo
+  document.querySelectorAll('.q-card').forEach(c=>c.classList.remove('active'));
+  document.getElementById('screen-result').classList.remove('active');
+
+  const qId = QUESTIONS[idx];
+  const card = document.getElementById('q-'+qId);
+  if(card) card.classList.add('active');
+
+  // Progreso
+  const pct = Math.round((idx/TOTAL)*100);
+  document.getElementById('progFill').style.width = pct+'%';
+  const numQ = idx < 2 ? (idx===0?'★':idx) : getDisplayNum(qId);
+  document.getElementById('progNum').textContent = numQ;
+
+  // Section tag
+  const s = SECTIONS[qId];
+  if(s) document.getElementById('sectionTag').textContent = s.tag;
+
+  // Dots
+  for(let i=0;i<TOTAL;i++){
+    const d = document.getElementById('dot-'+i);
+    if(!d) continue;
+    d.className = 'q-dot' + (i<idx?' done':(i===idx?' active':''));
+  }
+
+  // Slider init
+  if(['14','15','15b','16','17','17b'].includes(qId)){
+    const savedVal = scaleValues[qId] || 3;
+    const sl = document.getElementById('sl-q'+qId);
+    if(sl){
+      sl.value = savedVal;
+      updateSlider(qId, savedVal, true);
+    }
+  }
+}
+
+function getDisplayNum(qId){
+  const map = {'nombre':'★','9b':'9b','7a':'7a','7b':'7b','12b':'12b','15b':'15b','17b':'17b'};
+  return map[qId] || qId;
+}
+
+function nextQ(){
+  const qId = QUESTIONS[currentIdx];
+  // Award XP
+  awardXP(qId);
+  currentIdx++;
+  if(currentIdx >= TOTAL){
+    submitSurvey();
+    return;
+  }
+  // Check section transition
+  const prev = SECTIONS[QUESTIONS[currentIdx-1]];
+  const curr = SECTIONS[QUESTIONS[currentIdx]];
+  if(prev && curr && prev.icon !== curr.icon){
+    showSectionTransition(curr);
+    setTimeout(()=>{ showQuestion(currentIdx); }, 700);
+  } else {
+    showQuestion(currentIdx);
+  }
+}
+
+function prevQ(){
+  if(currentIdx > 0){
+    currentIdx--;
+    const card = document.querySelectorAll('.q-card.active')[0];
+    if(card){ card.style.animation = 'slideOut 0.2s ease forwards'; }
+    setTimeout(()=>{ showQuestion(currentIdx); }, 200);
+  }
+}
+
+function showSectionTransition(section){
+  const el = document.getElementById('secTransition');
+  document.getElementById('stIcon').textContent = section.icon;
+  document.getElementById('stLabel').textContent = section.tag;
+  el.classList.add('active');
+  setTimeout(()=>{ el.classList.remove('active'); el.classList.add('out'); }, 500);
+  setTimeout(()=>{ el.classList.remove('out'); }, 900);
+}
+
+// ══════════════════════════════════════════════
+//  OPCIONES
+// ══════════════════════════════════════════════
+function selectOpt(el, autoNext=false, isLast=false){
+  const q = el.dataset.q;
+  // Deselect otros
+  document.querySelectorAll(`.opt[data-q="${q}"]`).forEach(o=>o.classList.remove('selected'));
+  el.classList.add('selected');
+  answered[q] = el.dataset.v;
+  // Enable btn
+  const btn = document.getElementById('btn-'+q);
+  if(btn) btn.disabled = false;
+  // Enable btn-q23 specifically
+  if(q === 'q23') document.getElementById('btn-q23').disabled = false;
+  // Haptic-like vibration
+  if(navigator.vibrate) navigator.vibrate(20);
+  // Feedback visual
+  showMiniXP();
+  if(autoNext) setTimeout(()=>nextQ(), 400);
+}
+
+function toggleMulti(el){
+  el.classList.toggle('selected');
+  if(navigator.vibrate) navigator.vibrate(15);
+}
+
+// ══════════════════════════════════════════════
+//  NOMBRE
+// ══════════════════════════════════════════════
+document.getElementById('inp-nombre').addEventListener('input', function(){
+  userName = this.value.trim();
+  const g = document.getElementById('greeting');
+  if(userName.length > 1){
+    g.textContent = `¡Hola, ${userName}! 👋 Vamos a conocer tu perfil financiero`;
+    g.classList.add('show');
+  } else {
+    g.classList.remove('show');
+  }
+});
+
+document.getElementById('inp-nombre').addEventListener('keydown', function(e){
+  if(e.key==='Enter') nextQ();
+});
+
+// ══════════════════════════════════════════════
+//  SLIDER
+// ══════════════════════════════════════════════
+function updateSlider(qId, val, silent=false){
+  val = parseInt(val);
+  // qId puede llegar como 'q14' o '14' — normalizamos
+  const key = qId.replace(/^q/,'');       // '14', '15', '15b', etc.
+  const storeKey = key;                    // clave en scaleValues sin 'q'
+  scaleValues[storeKey] = val;
+
+  const pct = ((val-1)/4)*100;
+  // El slider tiene id="sl-q14", el display id="sv-q14", la desc id="sd-q14"
+  const sl = document.getElementById('sl-q'+key);
+  if(sl) sl.style.setProperty('--pct', pct+'%');
+  const sv = document.getElementById('sv-q'+key);
+  if(sv) sv.textContent = val;
+  const sd = document.getElementById('sd-q'+key);
+  if(sd) sd.textContent = SCALE_DESCS[val];
+  // Color del número
+  const colors = {1:'#ff6b6b',2:'#ff9f43',3:'#ffd700',4:'#7bff6e',5:'#4fffdf'};
+  if(sv) sv.style.color = colors[val];
+  // Feedback especial q15
+  if(key === '15' && !silent){
+    const fb = document.getElementById('fb-q15');
+    if(val >= 4){
+      fb.innerHTML = '<span class="feed-icon">🧠</span> Interesante — esto se llama "pain of paying". Los estudios confirman que efectivo genera más dolor al gastar.';
+      fb.classList.add('show');
+    } else if(val <= 2){
+      fb.innerHTML = '<span class="feed-icon">🤔</span> ¡Eres diferente a la mayoría! La mayoría siente más el gasto con efectivo.';
+      fb.classList.add('show');
+    } else {
+      fb.classList.remove('show');
+    }
+  }
+  if(!silent) showMiniXP();
+}
+
+// ══════════════════════════════════════════════
+//  XP & STREAK
+// ══════════════════════════════════════════════
+function awardXP(qId){
+  let pts = 10;
+  if(['14','15','15b','16','17','17b'].includes(qId)) pts = 8;
+  if(['9b','11','12b'].includes(qId)){
+    const el = document.getElementById('inp-q'+qId);
+    pts = el && el.value.trim().length > 10 ? 15 : 5;
+  }
+  xp += pts;
+  streak++;
+  document.getElementById('xpVal').textContent = xp+' XP';
+  document.getElementById('streakBadge').textContent = '🔥 '+streak;
+  // Streak milestone
+  if(streak % 5 === 0) showStreakAnim(streak);
+}
+
+function showMiniXP(){
+  const p = document.getElementById('xpPopup');
+  p.classList.remove('hide');
+  p.classList.add('show');
+  setTimeout(()=>{ p.classList.remove('show'); p.classList.add('hide'); }, 1200);
+}
+
+function showStreakAnim(n){
+  const el = document.getElementById('streakAnim');
+  el.textContent = `🔥 ${n} seguidas!`;
+  el.classList.add('show');
+  setTimeout(()=>{ el.classList.remove('show'); el.classList.add('hide'); }, 1500);
+  setTimeout(()=>{ el.classList.remove('hide'); }, 2000);
+}
+
+function updateCharCount(el, counterId){
+  const max = 200;
+  const len = el.value.length;
+  document.getElementById(counterId).textContent = `${len} / ${max}`;
+  if(len > max) el.value = el.value.substring(0,max);
+}
+
+// ══════════════════════════════════════════════
+//  PERFIL FINANCIERO
+// ══════════════════════════════════════════════
+function calcProfile(){
+  const digitalScore = [
+    scaleValues['14']||3,
+    scaleValues['15']||3,
+    scaleValues['16']||3
+  ].reduce((a,b)=>a+b,0);
+
+  const controlVal = answered['q20'] || '';
+  const q9Val = answered['q9'] || '';
+  const q21Val = answered['q21'] || '';
+
+  let profileKey = 'digital';
+  if(digitalScore >= 12 && controlVal.includes('no los cumplo')) profileKey = 'impulsive';
+  else if(digitalScore <= 7 && controlVal.includes('cumplo')) profileKey = 'disciplined';
+  else if(q21Val === 'Definitivamente sí' || q21Val === 'Creo que sí') profileKey = 'appAddict';
+  else if(q9Val === 'Nunca' || q9Val === 'Casi nunca') profileKey = 'saver';
+
+  const profiles = {
+    impulsive:{
+      icon:'🛍️', title:'El/La Gastador/a Digital',
+      desc:'Las apps de pago hacen que gastar se sienta menos real para ti. Tiendes a tomar decisiones de compra rápidas cuando el método de pago es fácil. ¡Pero la conciencia ya es el primer paso!'
+    },
+    disciplined:{
+      icon:'🏆', title:'El/La Estratega Financiero/a',
+      desc:'¡Eres de los pocos que realmente controla su dinero! Tienes disciplina con presupuestos y el método de pago no te afecta tanto emocionalmente.'
+    },
+    appAddict:{
+      icon:'📲', title:'El/La Nativo/a Digital',
+      desc:'Las apps de pago son parte central de tu vida financiera. Eres muy cómodo/a con tecnología pero eso puede volverte más vulnerable a gastos no planeados.'
+    },
+    saver:{
+      icon:'🐷', title:'El/La Ahorrador/a Consciente',
+      desc:'Raramente te quedas sin dinero — tienes buenos hábitos de consciencia financiera. Eres metódico/a y piensas antes de gastar.'
+    },
+    digital:{
+      icon:'⚡', title:'El/La Mixto/a Moderno/a',
+      desc:'Usas tanto efectivo como digital según la situación. Tienes una relación balanceada con el dinero, aunque a veces el digital puede nublarte la percepción del gasto.'
+    }
+  };
+  return profiles[profileKey];
+}
+
+function calcInsights(){
+  const insights = [];
+  const q10 = answered['q10'] || '';
+  const q9 = answered['q9'] || '';
+  const q15 = scaleValues['15'] || 3;
+  const q16 = scaleValues['16'] || 3;
+  const q21 = answered['q21'] || '';
+  const q22 = answered['q22'] || '';
+
+  if(q10.includes('100% Digital')) insights.push({i:'📱', t:'Eres 100% digital — probablemente una de las personas más expuestas al gasto invisible'});
+  if(q9==='Frecuentemente'||q9==='Siempre') insights.push({i:'⚠️', t:'Te quedas sin dinero frecuentemente — puede ser señal de que el presupuesto necesita atención'});
+  if(q15 >= 4) insights.push({i:'💡', t:'Experimentas el "pain of paying" — el efectivo duele más emocionalmente para ti'});
+  if(q16 >= 4) insights.push({i:'🛍️', t:'El pago digital te induce a compras que no harías con efectivo'});
+  if(q21.includes('sí')) insights.push({i:'📲', t:'Reconoces que Nequi/Daviplata influyen en tu gasto — ¡gran nivel de autoconsciencia!'});
+  if(q22==='Sí, varias veces') insights.push({i:'🎯', t:'Has caído varias veces en compras por impulso digital — es más común de lo que crees'});
+
+  if(insights.length === 0) insights.push({i:'✨', t:'Tus respuestas muestran una relación balanceada con el dinero'});
+  return insights.slice(0,4);
+}
+
+// ══════════════════════════════════════════════
+//  ENVIAR
+// ══════════════════════════════════════════════
+function recopilarDatos(){
+  const q8 = Array.from(document.querySelectorAll('.opt.multi.selected[data-q="q8"]')).map(o=>o.dataset.v);
+
+  // ORDEN EXACTO = orden de columnas en el Google Sheet
+  return {
+    'Timestamp'                              : new Date().toLocaleString('es-CO'),
+    'Nombre'                                 : document.getElementById('inp-nombre').value || '',
+    'Edad'                                   : document.getElementById('inp-q1').value || '',
+    'Efectivo vs digital: diferencia percibida': document.getElementById('inp-q11').value || '',
+    'Por qué lleva/no lleva registro'        : document.getElementById('inp-q12b').value || '',
+    'Género'                                 : answered['q2'] || '',
+    'Universidad'                            : answered['q3'] || '',
+    'Semestre'                               : answered['q4'] || '',
+    'Trabaja'                                : answered['q5'] || '',
+    'Quién financia'                         : answered['q6'] || '',
+    'Origen del dinero'                      : answered['q7a'] || '',
+    'Monto mensual'                          : answered['q7b'] || '',
+    'Frecuencia sin dinero'                  : answered['q9'] || '',
+    '% Físico vs Digital'                    : answered['q10'] || '',
+    'Lleva registro'                         : answered['q12'] || '',
+    'Experiencia de pago'                    : answered['q13'] || '',
+    'Educación financiera'                   : answered['q18'] || '',
+    'Principal problema'                     : answered['q19'] || '',
+    'Presupuesto'                            : answered['q20'] || '',
+    'Apps generan más gasto'                 : answered['q21'] || '',
+    'Compra impulsiva digital'               : answered['q22'] || '',
+    'Solo efectivo una semana'               : answered['q23'] || '',
+    'Categorías de gasto'                    : q8.join(', '),
+    'Por qué se queda sin dinero'            : document.getElementById('inp-q9b').value || '',
+    'Digital no se siente real (1-5)'        : scaleValues['14'] || 3,
+    'Efectivo duele más que digital (1-5)'   : scaleValues['15'] || 3,
+    'Efectivo se siente de menor valor (1-5)': scaleValues['15b'] || 3,
+    'Digital genera más compras (1-5)'       : scaleValues['16'] || 3,
+    'Arrepentimiento con tarjeta (1-5)'      : scaleValues['17'] || 3,
+    'Indiferente al método de pago (1-5)'    : scaleValues['17b'] || 3,
+  };
+}
+
+function submitSurvey(){
+  const data = recopilarDatos();
+
+  // ── Método 1: fetch POST (más confiable, sin límite de URL)
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',          // Google Apps Script requiere no-cors
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).catch(()=>{
+    // ── Fallback: iframe GET (por si fetch falla en algún browser viejo)
+    enviarConIframe(data);
+  });
+
+  // Mostrar resultado inmediatamente sin esperar respuesta
+  showResult();
+}
+
+function enviarConIframe(data){
+  const jsonStr = JSON.stringify(data);
+  const iframeName = 'gframe_'+Date.now();
+  const iframe = document.createElement('iframe');
+  iframe.name = iframeName;
+  iframe.style.display = 'none';
+  document.body.appendChild(iframe);
+  const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = SCRIPT_URL;
+  form.target = iframeName;
+  const input = document.createElement('input');
+  input.type = 'hidden';
+  input.name = 'payload';
+  input.value = jsonStr;
+  form.appendChild(input);
+  document.body.appendChild(form);
+  form.submit();
+  setTimeout(()=>{
+    try{ document.body.removeChild(form); }catch(e){}
+    setTimeout(()=>{ try{ document.body.removeChild(iframe); }catch(e){} }, 2000);
+  }, 2000);
+}
+
+function showResult(){
+  // Ocultar todo
+  document.querySelectorAll('.q-card').forEach(c=>c.classList.remove('active'));
+  document.querySelector('.progress-zone').style.opacity = '0';
+
+  // Calcular perfil
+  const profile = calcProfile();
+  const insights = calcInsights();
+
+  // Animaciones
+  launchConfetti();
+
+  const result = document.getElementById('screen-result');
+  result.classList.add('active');
+
+  document.getElementById('resultName').textContent = userName ? `¡${userName}, lo lograste!` : '¡Lo lograste!';
+  document.getElementById('profileIcon').textContent = profile.icon;
+  document.getElementById('profileTitle').textContent = profile.title;
+  document.getElementById('profileDesc').textContent = profile.desc;
+
+  // XP counter animation
+  const finalXP = xp + 30; // bonus final
+  let current = 0;
+  const step = Math.ceil(finalXP/40);
+  const counter = setInterval(()=>{
+    current = Math.min(current+step, finalXP);
+    document.getElementById('resultXP').textContent = current+' XP';
+    if(current >= finalXP) clearInterval(counter);
+  }, 30);
+
+  // Insights
+  const list = document.getElementById('insightList');
+  list.innerHTML = insights.map(i=>`
+    <div class="result-insight-item">
+      <span>${i.i}</span>
+      <span>${i.t}</span>
+    </div>
+  `).join('');
+
+  // Emojis de resultado
+  const emojis = {'🛍️':'🎊','🏆':'🏆','📲':'📲','🐷':'🐷','⚡':'🎉'};
+  document.getElementById('resultFirework').textContent = emojis[profile.icon] || '🎉';
+
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ══════════════════════════════════════════════
+//  CONFETTI
+// ══════════════════════════════════════════════
+function launchConfetti(){
+  const c = document.getElementById('confettiContainer');
+  const colors = ['#7fff6e','#4fffdf','#ff6eb4','#ffd700','#ff6b6b','#a8ff78'];
+  for(let i=0;i<80;i++){
+    const p = document.createElement('div');
+    p.className = 'confetti-piece';
+    p.style.left = Math.random()*100+'vw';
+    p.style.background = colors[Math.floor(Math.random()*colors.length)];
+    p.style.width = (6+Math.random()*8)+'px';
+    p.style.height = (6+Math.random()*8)+'px';
+    p.style.borderRadius = Math.random()>0.5?'50%':'2px';
+    p.style.animationDuration = (1.5+Math.random()*2)+'s';
+    p.style.animationDelay = (Math.random()*0.8)+'s';
+    c.appendChild(p);
+    setTimeout(()=>{ try{c.removeChild(p)}catch(e){} }, 4000);
+  }
+}
+
+// ══════════════════════════════════════════════
+//  RESET
+// ══════════════════════════════════════════════
+function resetSurvey(){
+  currentIdx=0; xp=0; streak=0; answered={}; userName=''; scaleValues={};
+  document.getElementById('xpVal').textContent = '0 XP';
+  document.getElementById('streakBadge').textContent = '🔥 0';
+  document.querySelectorAll('.opt').forEach(o=>o.classList.remove('selected'));
+  document.querySelectorAll('.q-input').forEach(i=>i.value='');
+  document.querySelectorAll('.q-textarea').forEach(t=>t.value='');
+  document.querySelectorAll('.btn-next[id]').forEach(b=>b.disabled=true);
+  document.querySelector('.progress-zone').style.opacity='1';
+  document.getElementById('screen-result').classList.remove('active');
+  document.getElementById('screen-intro').style.display='flex';
+  document.getElementById('screen-intro').style.opacity='1';
+  document.getElementById('screen-intro').style.animation='none';
+  document.getElementById('app-main').style.display='none';
+}
+
+// ── Init sliders (claves sin prefijo 'q')
+['14','15','15b','16','17','17b'].forEach(id=>{
+  scaleValues[id] = 3;
+});
+
+// ── Keyboard nav
+document.addEventListener('keydown', function(e){
+  const active = document.querySelector('.q-card.active');
+  if(!active) return;
+  if(e.key === 'Enter'){
+    const btn = active.querySelector('.btn-next:not([disabled])');
+    if(btn) btn.click();
+  }
+});
+</script>
+
+</body>
+</html>
